@@ -12,7 +12,7 @@ namespace Calc.Launcher
                 return;
             }
 
-            var interpreter = new Interpreter();
+            var interpreter = CreateInterpreter();
             var ast = new Parser().Parse(new Tokenizer().Tokenize(args[0]));
             ast.Accept(interpreter);
             Console.WriteLine(interpreter.Result);
